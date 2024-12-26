@@ -1,0 +1,41 @@
+.patient-history {
+  width: 80vw;
+  position: absolute;
+  left: 19vw;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  }
+  
+  .patient-history h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .consultation-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .consultation-table th,
+  .consultation-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .consultation-table th {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+  }
+  
+  .consultation-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  .consultation-table tr:hover {
+    background-color: #ddd;
+  }
+  

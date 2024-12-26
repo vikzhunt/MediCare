@@ -1,0 +1,124 @@
+.adminContent {
+    margin-left: 250px;
+    padding: 20px;
+    overflow-y: auto;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.adminHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.adminSearch{
+    display: flex;
+    justify-content: center;
+}
+.adminHeader_input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 35vw;
+}
+
+
+.adminSearch-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+
+.date {
+    color: #666;
+}
+
+
+.adminStatus {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.adminStatus-card {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    width: 22%;
+    padding: 20px;
+    text-align: center;
+}
+
+.adminStatus-card h3 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.adminStatus-card p {
+    margin: 10px 0 0;
+    color: #666;
+}
+
+
+.adminUpcoming {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.adminUpAppointments,
+.adminUpSessions {
+    width: 47%;
+    margin-top: 30px;
+}
+
+.adminUpAppointments h3,
+.adminUpSessions h3 {
+    font-size: 18px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f4f4f4;
+    font-weight: normal;
+}
+
+table tbody tr td {
+    text-align: center;
+}
+
+table tbody tr td p {
+    color: #999;
+    margin: 0;
+}
+
+.show-all-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

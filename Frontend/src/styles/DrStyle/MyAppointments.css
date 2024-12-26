@@ -1,0 +1,74 @@
+.my-appointments {
+  width: 80vw;
+  position: absolute;
+  left: 19vw;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.my-appointments h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.appointment-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.appointment-table th,
+.appointment-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.appointment-table th {
+  background-color: #007BFF;
+  color: white;
+  text-align: center;
+}
+
+.appointment-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.appointment-table tr:hover {
+  background-color: #ddd;
+}
+
+.accept-btn,
+.reject-btn,
+.confirm-btn {
+  padding: 8px 12px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.accept-btn {
+  background-color: #28a745;
+}
+
+.reject-btn {
+  background-color: #dc3545;
+}
+
+.confirm-btn {
+  background-color: #007BFF;
+}
+
+.online-scheduling {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+.online-scheduling label {
+  display: block;
+  margin-bottom: 10px;
+}

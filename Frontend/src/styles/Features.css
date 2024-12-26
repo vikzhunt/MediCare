@@ -1,0 +1,24 @@
+.cards {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: space-between;
+  padding: 6vh 0 4vh 0;
+  background-color: rgb(228, 234, 247);
+
+}
+
+.card {
+  background-color: rgb(17, 47, 88);
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 4vw;
+  margin: 2vh;
+  box-shadow: 10px 5px 13px grey;
+  color: white;
+}
+
+
+.cardTitle{
+  color: rgb(75, 95, 123);
+  text-decoration: solid;
+}

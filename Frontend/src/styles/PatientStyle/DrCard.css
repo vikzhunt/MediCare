@@ -1,0 +1,105 @@
+.DrCard {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    max-width: 600px;
+    transition: transform 0.3s ease;
+}
+
+.DrCard:hover {
+    transform: translateY(-5px);
+}
+
+.DrImage {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.DrDetails {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.DrNaam {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.DrDegree {
+    font-size: 16px;
+    color: #555;
+    margin: -5px 0 18px 75px;
+}
+
+.DrDetails h4 {
+    font-size: 16px;
+    color: #444;
+    margin: 5px 0;
+}
+
+.DrDetails h6 {
+    font-size: 18px;
+    color: #007BFF;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.flexDisplay{
+    display: flex;
+}
+
+.Clinic, .Online {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+}
+
+.Clinic {
+    background-color: #007BFF;
+}
+
+.Online {
+    background-color: #28A745;
+}
+
+.Clinic:hover {
+    background-color: #0056b3;
+}
+
+.Online:hover {
+    background-color: #218838;
+}
+
+@media (max-width: 768px) {
+    .DrCard {
+        flex-direction: column;
+        align-items: center;
+        max-width: 100%;
+    }
+
+    .DrImage {
+        margin-bottom: 15px;
+    }
+
+    .Clinic, .Online {
+        width: 100%;
+        margin: 5px 0;
+    }
+}

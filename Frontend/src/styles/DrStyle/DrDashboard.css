@@ -1,0 +1,200 @@
+
+.DRdashboard {
+    display: grid;
+    grid-template-columns: auto auto;
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f4f6;
+}
+
+.DRsidebar {
+    width: 18vw;
+    height: 100vh;
+    position: fixed;
+    background-color: #1f2937;
+    color: #fff;
+    padding: 10vh 0vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.DRprofile {
+    display: flex;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.DRprofile-pic {
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover;
+    border: 2px solid #38bdf8;
+}
+
+.DrProfile h3 {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
+.DrProfile p {
+    font-size: 0.9em;
+    color: #9ca3af;
+}
+
+.logout-btn {
+    background-color: #ef4444;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 0.9em;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+    transition: border-radius 0.3s ease;
+
+}
+
+.logout-btn:hover {
+    background-color: #dc2626;
+    border-radius: 15%;
+}
+
+.sidebar-nav {
+    margin-top: 30px;
+    width: 100%;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-nav li {
+    padding: 15px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    color: #9ca3af;
+    border-bottom: 1px solid #374151;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar-nav li:hover {
+    background-color: #38bdf8;
+    color: #fff;
+}
+
+.DRcontent {
+    width: 80vw;
+    position: absolute;
+    left: 19vw;
+    padding: 20px;
+}
+
+.DRheader {
+    background-image: url("https://images.unsplash.com/photo-1496868834840-5f4c98840aaa?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODN8fGxpbmVzJTIwYmFja2dyb3VuZCUyMGltYWdlfGVufDB8fDB8fHww");
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h2 {
+    font-size: 2em;
+    margin: 5px 0;
+}
+
+.header p {
+    font-size: 1em;
+    color: #f3f4f6;
+}
+
+.appointment-btn {
+    background-color: #1f2937;
+    color: #38bdf8;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.appointment-btn:hover {
+    background-color: #38bdf8;
+    color: #1f2937;
+}
+
+.DRdate {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #9ca3af;
+}
+
+.status {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.status-card {
+    background-color: #1f2937;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 22%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.status-card h3 {
+    font-size: 2em;
+    margin: 0;
+}
+
+.status-card p {
+    font-size: 1em;
+    color: #9ca3af;
+}
+
+.upcoming-sessions {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 5vh;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.upcoming-sessions h3 {
+    margin-bottom: 10px;
+    color: #1f2937;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table thead {
+    background-color: #38bdf8;
+    color: #fff;
+}
+
+table th,
+table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+table tbody td p {
+    color: #9ca3af;
+    text-align: center;
+}

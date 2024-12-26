@@ -1,0 +1,85 @@
+.docContainer {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.head {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.docList {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.eachDocContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.eachDoc {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.eachDoc h4 {
+    font-size: 20px;
+    color: #555;
+    margin: 0;
+}
+
+.eachDoc p {
+    font-size: 14px;
+    color: #888;
+    margin: 0;
+}
+
+.buttonGroup {
+    display: flex;
+    gap: 10px;
+}
+
+.ViewBtn, .delBtn {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    font-size: 14px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 2vw;
+}
+
+.ViewBtn:hover {
+    background-color: #0056b3;
+}
+
+.delBtn {
+    background-color: #ff4c4c;
+    font-family: "Font Awesome 5 Free"; /* Ensure icon renders correctly */
+    font-weight: 900;
+}
+
+.delBtn:hover {
+    background-color: #d93939;
+}
+
+.delBtn:focus,
+.ViewBtn:focus {
+    outline: none;
+}

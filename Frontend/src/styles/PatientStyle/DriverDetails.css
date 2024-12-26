@@ -1,0 +1,65 @@
+/* Call Ambulance button styling */
+.ambulanceBtn {
+    position: absolute;
+    padding: 12px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    top: 40vh;
+    left: 52vw;
+}
+
+
+.ambulanceBtn:hover {
+    background-color: #218838;
+}
+
+.driverDetails {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detailsCard {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.detailsCard h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #333;
+}
+
+.detailsCard p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.closeBtn {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.closeBtn:hover {
+    background-color: #c82333;
+}

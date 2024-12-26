@@ -1,0 +1,82 @@
+.brochure {
+    background-color: rgb(228, 234, 247);
+    color: #333;
+    font-family: Arial, sans-serif;
+    padding-top: 10vh;
+}
+
+.image {
+    width: 95vw;
+    height: 68vh;
+}
+
+
+.homeContent {
+    position: absolute;
+    top: 27.2vh;
+    left: 11vw;
+    text-align: left;
+    max-width: 500px;
+}
+
+.homeContent h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #007bff;
+    margin: 0;
+}
+
+.homeContent h3 {
+    font-size: 2.6rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0.2rem 0;
+}
+
+.Signbtn {
+    position: absolute;
+    top: 56vh;
+    left: 12vw;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    background-color: rgb(239, 179, 29);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Style link inside button */
+.Signbtn a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Hover effect for the sign-up button */
+.Signbtn:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .brochure {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .content h2, .content h3 {
+        font-size: 1.8rem;
+    }
+
+    .image {
+        width: 250px;
+    }
+
+    .Signbtn {
+        width: 100%;
+    }
+}

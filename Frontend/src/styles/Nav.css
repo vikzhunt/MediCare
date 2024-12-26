@@ -1,0 +1,78 @@
+
+.Navi {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: rgb(228, 234, 247);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    border-bottom: 4px solid #ddd;
+}
+
+.Navi > div:first-child {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.gen {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.genBtn {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.genBtn:hover {
+    color: #007bff;
+    transform: translateY(-2px);
+    text-decoration: underline;
+}
+
+.loginSign {
+    display: flex;
+    gap: 1rem;
+}
+
+.loginSign button {
+    background-color: transparent;
+    border: 2px solid #007bff;
+    color: #007bff;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.loginSign button a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.loginSign button:hover {
+    background-color: rgb(67, 159, 144);
+    color: #ffffff;
+    border-color: rgb(67, 159, 144);
+}
+
+.signUp {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+

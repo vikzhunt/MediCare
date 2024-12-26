@@ -1,0 +1,58 @@
+.adminBackBtn {
+    border: none;
+    color: blue;
+    position: absolute;
+    left: 23vw;
+    top: 6vh;
+}
+
+
+.addDRform {
+    max-width: 400px;
+    margin: 7vh 46vw;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.addDRform h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.addDRform form {
+    display: flex;
+    flex-direction: column;
+}
+
+.addDRform label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.addDRform input,
+.addDRform textarea {
+    margin-bottom: 16px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.addDRform .submitBtn {
+    background-color: #4caf50;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.addDRform .submitBtn:hover {
+    background-color: #45a049;
+}

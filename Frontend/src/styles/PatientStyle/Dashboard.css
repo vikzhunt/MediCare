@@ -1,0 +1,65 @@
+
+.DashboardContainer {
+    display: flex;
+    height: 100vh; 
+    background-color: #f5f5f5; 
+}
+
+.navigation {
+    width: 20%; 
+    background-color: #3f51b5; 
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); 
+}
+
+.naviBtn {
+    background-color: #ffffff; 
+    color: #3f51b5; 
+    border: none; 
+    padding: 15px;
+    margin: 10px 0; 
+    width: 100%; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+
+.naviBtn:hover {
+    background-color: #e0e0e0; 
+}
+
+.RHS {
+    flex: 1;
+    padding: 20px; 
+    display: flex; 
+    flex-direction: column; 
+}
+
+.profileNavi {
+    display: flex; 
+    justify-content: flex-end; 
+    margin-bottom: 20px; 
+}
+
+.profile {
+    background-color: #3f51b5;
+    color: white; 
+    border: none;
+    padding: 10px 15px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+
+.profile:hover {
+    background-color: #303f9f;
+}
+
+.details {
+    flex: 1; 
+    background-color: #ffffff; 
+    border-radius: 5px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    padding: 20px; 
+    overflow-y: auto; 
+}

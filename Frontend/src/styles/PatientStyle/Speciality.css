@@ -1,0 +1,44 @@
+.AllDrHead {
+    text-align: center;
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.specBtn {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    margin: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.specBtn:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.specBtn:active {
+    background-color: #388e3c;
+    transform: scale(1);
+}
+
+.CardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .specBtn {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
