@@ -16,7 +16,7 @@ const signUp = async (req, res) => {
     address: 'Missing Data',
     age: 0,
     gender: 'Missing Data',
-    bloodGroup: 'Missing Data',
+    bloodGroup: 'O+',
   }
   try {
     const { email, username, password, role } = req.body;
