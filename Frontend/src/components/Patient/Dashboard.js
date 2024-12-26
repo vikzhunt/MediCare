@@ -8,12 +8,13 @@ import Bookings from "./Bookings.js"
 import Documents from "./Documents.js"
 import Notification from "./Notifications.js"
 import Ambulance from "./Ambulance.js"
+import HospitalLocator from "./HospitalLocator.js";
 
 
 const Dashboard = () => {
 
     const location = useLocation();
-    const email = location.state?.email;
+    const email = localStorage.getItem('email');
 
     useEffect(() => {
         if (email) {
@@ -29,6 +30,7 @@ const Dashboard = () => {
         Documents: <Documents email = {email}/>,
         Notification: <Notification />,
         Ambulance: <Ambulance />,
+        HospitalLocator: <HospitalLocator />
     };
 
 
@@ -46,6 +48,7 @@ const Dashboard = () => {
                 <button className="naviBtn" onClick={() => btnAction("Documents")}>Documents</button>
                 <button className="naviBtn" onClick={() => btnAction("Notification")}>Notification</button>
                 <button className="naviBtn" onClick={() => btnAction("Ambulance")}>Ambulance Service</button>
+                <button className="naviBtn" onClick={() => btnAction("HospitalLocator")}>Nearby Hospitals</button>
                 <Link to="/"><button className="naviBtn" >Logout</button></Link>
 
 

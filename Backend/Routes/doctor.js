@@ -66,10 +66,6 @@ router.delete('/documents/:fileName', deleteDocument);
 //     }
 // });
 
-
-
 router.post('/create-order', createOrder);
-
-
 
 module.exports= router;
