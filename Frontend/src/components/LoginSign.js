@@ -5,7 +5,6 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../styles/LoginRegister.css'
 
-// Images
 import Img01 from '../images/LoginRegister/bg1.svg';
 import Img02 from '../images/LoginRegister/bg2.svg';
 import ImgEyeHide from '../images/LoginRegister/eye-hide.png';
@@ -19,7 +18,7 @@ const initialState = {
     password: '',
     username: '',
     email: '',
-    userType: 'Patient', // Default user type
+    userType: 'Patient',
     isActive: true,
     errors: {},
 };
@@ -77,7 +76,7 @@ const LoginSign = (props) => {
             const { token, role } = response.data;
             localStorage.setItem('token', token);
             localStorage.setItem('email', email);
-            navigate(role === 'Admin' ? '/admin_dashboard' : role === 'Doctor' ? '/doctor_dashboard' : '/patient_dashboard');
+            navigate(role === 'Admin' ? '/admin_dashboard' : role === 'Doctor' ? '/doctor_dashboard' : '/patient_dashboard', { state: { email, role } });
         } catch (error) {
             toast.error('Login failed. Please check your credentials and try again.');
         }
@@ -94,7 +93,7 @@ const LoginSign = (props) => {
             const { token } = response.data;
             localStorage.setItem('token', token);
             localStorage.setItem('email', email);
-            navigate(userType === 'Admin' ? '/admin_dashboard' : '/patient_dashboard');
+            navigate(userType === 'Admin' ? '/admin_dashboard' : '/patient_dashboard', { state: { email, role: userType } });
         } catch (error) {
             toast.error('Signup failed. Please try again.');
         }
@@ -111,15 +110,7 @@ const LoginSign = (props) => {
 
                         {/* ----------------------------- Login Form ----------------------------- */}
                         <form className="sign-in-form" onSubmit={handleLogin}>
-                            <h2 className="title">Sign in</h2>
-                            <div className="input-field">
-                                <label>User Type:</label>
-                                <select name="userType" value ={state.userType} onChange={onChange}>
-                                    <option value="Patient">Patient</option>
-                                    <option value="Doctor">Doctor</option>
-                                    <option value="Admin">Admin</option>
-                                </select>
-                            </div>
+                            <h2 className="title">Login</h2>
                             <div className="input-field">
                                 <img src={ImgEmail} className="fas" alt="Email Icon" />
                                 <input type="email" name="email" value={state.email} placeholder="Email" onChange={onChange} />
