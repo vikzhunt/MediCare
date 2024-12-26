@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 const Profile = (props) => {
-  const email = props.email;
+  const email = localStorage.getItem('email');
 
   const [user, setUser] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);

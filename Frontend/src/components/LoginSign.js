@@ -1,157 +1,230 @@
-import React, { useState, useEffect } from 'react';
-import '../styles/LoginSign.css';
-import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import '../styles/LoginRegister.css'
+
+// Images
+import Img01 from '../images/LoginRegister/bg1.svg';
+import Img02 from '../images/LoginRegister/bg2.svg';
+import ImgEyeHide from '../images/LoginRegister/eye-hide.png';
+import ImgEmail from "../images/LoginRegister/email.png";
+import ImgLock from "../images/LoginRegister/lock.png";
+import ImgUser  from "../images/LoginRegister/user.png";
+import ImgEye from "../images/LoginRegister/eye.png";
+const initialState = {
+    isPasswordShown: false,
+    isEyeImage: true,
+    password: '',
+    username: '',
+    email: '',
+    userType: 'Patient', // Default user type
+    isActive: true,
+    errors: {},
+};
 
 const LoginSign = (props) => {
-    const roleMap = {
-        Patient: "/patient_dashboard",
-        Doctor: "/doctor_dashboard",
-        Admin: "/admin_dashboard"
-    };
-
-    const [role, setRole] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [username, setUsername] = useState('');
-    const [roleDropdown, setroleDropdown] = useState('Patient');
-
-    useEffect(() => {
-        setEmail('');
-        setPassword('');
-    }, []);
-
+    const [state, setState] = useState(initialState);
     const navigate = useNavigate();
 
-    const handleEmailChange = (e) => setEmail(e.target.value);
-    const handlePasswordChange = (e) => setPassword(e.target.value);
-    const handleUsernameChange = (e) => setUsername(e.target.value);
-
     const toggleForm = () => {
-        props.setLogin((prevState) => !prevState);
+        setState({ ...state, isActive: !state.isActive, errors: {} });
     };
 
-    const handleLogin = async (e) => {
-        e.preventDefault();
+    const onChange = (event) => {
+        const { name, value } = event.target;
+        setState({ ...state, [name]: value });
+    };
+
+    const PasswordVisibility = () => {
+        setState({ ...state, isPasswordShown: true, isEyeImage: false });
+    };
+
+    const PasswordNotVisibility = () => {
+        setState({ ...state, isPasswordShown: false, isEyeImage: true });
+    };
+
+    const validateForm = () => {
+        const { username, email, password } = state;
+        const errors = {};
+
+        if (state.isActive && !username) {
+            errors.username = 'Username is required';
+        }
+
+        if (!email) {
+            errors.email = 'Email is required';
+        } else if (!/\S+@\S+\.\S+/.test(email)) {
+            errors.email = 'Email address is invalid';
+        }
+
+        if (!password) {
+            errors.password = 'Password is required';
+        } else if (password.length < 6) {
+            errors.password = 'Password must be at least 6 characters';
+        }
+
+        setState({ ...state, errors });
+        return Object.keys(errors).length === 0;
+    };
+
+    const handleLogin = async (event) => {
+        event.preventDefault();
+        const { email, password, userType } = state;
         try {
             const response = await axios.post('http://localhost:5000/api/v1/login', { email, password });
-            console.log(response.data.role);
-            if (response) {
-                localStorage.setItem('token', response.data.token);
-                localStorage.setItem('email', email);
-                setRole(response.data.role);
-                navigate(roleMap[response.data.role], { state: { email: response.data.email } });
-                setEmail('');
-                setPassword('');
-            }
+            const { token, role } = response.data;
+            localStorage.setItem('token', token);
+            localStorage.setItem('email', email);
+            navigate(role === 'Admin' ? '/admin_dashboard' : role === 'Doctor' ? '/doctor_dashboard' : '/patient_dashboard');
         } catch (error) {
-            toast.error('Login failed. Please try again.');
+            toast.error('Login failed. Please check your credentials and try again.');
         }
     };
 
-    const handleSignUp = async (e) => {
-        e.preventDefault();
+    const handleSignUp = async (event) => {
+        event.preventDefault();
+        if (!validateForm()) {
+            return;
+        }
+        const { username, email, password, userType } = state;
         try {
-            const response = await axios.post('http://localhost:5000/api/v1/signup', { email, username, password, role:roleDropdown });
-            console.log(response);
-
-            if (response) {
-                localStorage.setItem('token', response.data.token);
-                localStorage.setItem('email', email);
-                setRole(response.data.role);
-                setEmail('');
-                setPassword('');
-                setUsername('');
-                setroleDropdown('Patient');
-                navigate(roleMap[response.data.role], { state: { email: response.data.email } });
-            }
+            const response = await axios.post('http://localhost:5000/api/v1/signup', { email, username, password, role: userType });
+            const { token } = response.data;
+            localStorage.setItem('token', token);
+            localStorage.setItem('email', email);
+            navigate(userType === 'Admin' ? '/admin_dashboard' : '/patient_dashboard');
         } catch (error) {
             toast.error('Signup failed. Please try again.');
         }
     };
 
-    return (
-        <div className='loginBody'>
-            <section className="forms-section">
-                <h1 className="section-title">Login & Signup Forms</h1>
-                <div className="forms">
-                    <div className={`form-wrapper ${props.isLogin ? "is-active" : ""}`}>
-                        <button type="button" className="switcher switcher-login" onClick={toggleForm}>
-                            Login
-                            <span className="underline"></span>
-                        </button>
-                        <form className="form form-login" onSubmit={handleLogin}>
-                            <fieldset>
-                                <legend>Please, enter your email and password for login.</legend>
-                                <div className="input-block">
-                                    <label htmlFor="login-email">E-mail</label>
-                                    <input
-                                        id="login-email"
-                                        type="email"
-                                        required
-                                        value={email}
-                                        onChange={handleEmailChange}
-                                    />
-                                </div>
-                                <div className="input-block">
-                                    <label htmlFor="login-password">Password</label>
-                                    <input
-                                        id="login-password"
-                                        type="password"
-                                        required
-                                        value={password}
-                                        onChange={handlePasswordChange}
-                                    />
-                                </div>
-                            </fieldset>
-                            <button type="submit" className="btn-login">Login</button>
-                        </form>
-                    </div>
-                    
-                    
-                    <div className={`form-wrapper ${!props.isLogin ? "is-active" : ""}`}>
-                        <button type="button" className="switcher switcher-signup" onClick={toggleForm}>
-                            Sign Up
-                            <span className="underline"></span>
-                        </button>
-                        <form className="form form-signup" onSubmit={handleSignUp}>
-                            <fieldset>
-                                <legend>Please, enter your username, email, and password for sign up.</legend>
-                                
-                                <div className="input-block">
-                                    <label htmlFor="signup-username">Name</label>
-                                    <input id="signup-username" value={username} onChange={handleUsernameChange} type="text" required />
-                                </div>
-                                <div className="input-block">
-                                    <label htmlFor="signup-email">E-mail</label>
-                                    <input id="signup-email" value={email} onChange={handleEmailChange} type="email" required />
-                                </div>
-                                <div className="input-block">
-                                    <label htmlFor="signup-password">Password</label>
-                                    <input id="signup-password" value={password} onChange={handlePasswordChange} type="password" required />
-                                </div>
+    const { errors } = state;
 
-                                <div className='roleDropdown' >
-                                    <label for="selectRole">Sign in as:</label>
-                                    <select
-                                        name="role"
-                                        id="role"
-                                        value={roleDropdown}
-                                        onChange={(e) => setroleDropdown(e.target.value)} 
-                                        required
-                                    >
-                                        <option value="Patient">Patient</option>
-                                        <option value="Doctor">Doctor</option>
-                                    </select>
-                                </div>
-                                
-                            </fieldset>
-                            <button type="submit" className="btn-signup">Sign Up</button>
+    return (
+        <div className="Login-Section">
+            <ToastContainer />
+            <div className={state.isActive ? "login-container" : "login-container sign-up-mode"} id="container">
+                <div className="forms-container">
+                    <div className="signin-signup">
+
+                        {/* ----------------------------- Login Form ----------------------------- */}
+                        <form className="sign-in-form" onSubmit={handleLogin}>
+                            <h2 className="title">Sign in</h2>
+                            <div className="input-field">
+                                <label>User Type:</label>
+                                <select name="userType" value ={state.userType} onChange={onChange}>
+                                    <option value="Patient">Patient</option>
+                                    <option value="Doctor">Doctor</option>
+                                    <option value="Admin">Admin</option>
+                                </select>
+                            </div>
+                            <div className="input-field">
+                                <img src={ImgEmail} className="fas" alt="Email Icon" />
+                                <input type="email" name="email" value={state.email} placeholder="Email" onChange={onChange} />
+                                {errors.email && <p className="error">{errors.email}</p>}
+                            </div>
+                            <div className="input-field">
+                                <img src={ImgLock} className="fas" alt="Lock Icon" />
+                                <input
+                                    type={state.isPasswordShown ? "text" : "password"}
+                                    name="password"
+                                    value={state.password}
+                                    placeholder="Password"
+                                    onChange={onChange}
+                                />
+                                <img
+                                    src={state.isEyeImage ? ImgEye : ImgEyeHide}
+                                    className="eye"
+                                    alt="Eye Icon"
+                                    onClick={state.isPasswordShown ? PasswordNotVisibility : PasswordVisibility}
+                                />
+                                {errors.password && <p className="error">{errors.password}</p>}
+                            </div>
+                            <input type="submit" value="Login" className="btn solid" />
+                        </form>
+
+                        {/* ----------------------------- Registration Form ----------------------------- */}
+                        <form className="sign-up-form" onSubmit={handleSignUp}>
+                            <h2 className="title">Sign up</h2>
+                            <div className="input-field">
+                                <label>User Type:</label>
+                                <select name="userType" value={state.userType} onChange={onChange}>
+                                    <option value="Patient">Patient</option>
+                                    <option value="Doctor">Doctor</option>
+                                    <option value="Admin">Admin</option>
+                                </select>
+                            </div>
+                            <div className="input-field">
+                                <img src={ImgUser } className="fas" alt="User  Icon" />
+                                <input
+                                    type="text"
+                                    name="username"
+                                    value={state.username}
+                                    placeholder="Username"
+                                    onChange={onChange}
+                                />
+                                {errors.username && <p className="error">{errors.username}</p>}
+                            </div>
+                            
+                            <div className="input-field">
+                                <img src={ImgEmail} className="fas" alt="Email Icon" />
+                                <input
+                                    type="email"
+                                    name="email"
+                                    value={state.email}
+                                    placeholder="Email"
+                                    onChange={onChange}
+                                />
+                                {errors.email && <p className="error">{errors.email}</p>}
+                            </div>
+                            <div className="input-field">
+                                <img src={ImgLock} className="fas" alt="Lock Icon" />
+                                <input
+                                    type={state.isPasswordShown ? "text" : "password"}
+                                    name="password"
+                                    value={state.password}
+                                    placeholder="Password"
+                                    onChange={onChange}
+                                />
+                                <img
+                                    src={state.isEyeImage ? ImgEye : ImgEyeHide}
+                                    className="eye"
+                                    alt="Eye Icon"
+                                    onClick={state.isPasswordShown ? PasswordNotVisibility : PasswordVisibility}
+                                />
+                                {errors.password && <p className="error">{errors.password}</p>}
+                            </div>
+                            <input type="submit" className="btn" value="Sign up" />
                         </form>
                     </div>
                 </div>
-            </section>
+
+                <div className="panels-container">
+                    <div className="panel left-panel">
+                        <div className="content">
+                            <h3>New here?</h3>
+                            <p>
+                                Join us and explore the benefits of our platform.
+                            </p>
+                            <button className="btn transparent" id="sign-up-btn" onClick={toggleForm}>Sign up</button>
+                        </div>
+                        <img src={Img01} className="image" alt="Background" />
+                    </div>
+
+                    <div className="panel right-panel">
+                        <div className="content">
+                            <h3>One of us</h3>
+                            <p>
+                                Welcome back! Please log in to continue.
+                            </p>
+                            <button className="btn transparent" id="sign-in-btn" onClick={toggleForm}>Sign in</button>
+                        </div>
+                        <img src={Img02} className="image" alt="Background" />
+                    </div>
+                </div>
+            </div>
         </div>
     );
 };
