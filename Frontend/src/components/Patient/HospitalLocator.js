@@ -21,6 +21,7 @@ const HospitalLocator = () => {
           .then((response) => {
             if (response.data?.results) {
               setHospitals(response.data.results);
+              console.log(response.data.results)
 
               const destinations = response.data.results.map(
                 (hospital) =>
@@ -95,7 +96,7 @@ const HospitalLocator = () => {
 
     if (!window.google) {
       const script = document.createElement("script");
-      script.src = `https://maps.gomaps.pro/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap`;
+      script.src = `https://maps.gomaps.pro/maps/api/js?key=AlzaSy2-nu3N5iP5toXTRKlpED2F0_hza6eFKHb`;
       script.async = true;
       script.defer = true;
       window.initMap = initMap;
