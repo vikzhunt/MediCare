@@ -13,10 +13,10 @@ const HospitalLocator = () => {
       });
       setMap(map);
 
-      const fetchHospitals = (pos) => {
-        axios
+      const fetchHospitals = async (pos) => {
+        await axios
           .get(
-            `https://maps.gomaps.pro/maps/api/place/nearbysearch/json?keyword=Hospital&location=${pos.lat}%2C${pos.lng}&radius=1500&type=hospital&key=AlzaSy2-nu3N5iP5toXTRKlpED2F0_hza6eFKHb`
+            `https://maps.gomaps.pro/maps/api/place/nearbysearch/json?keyword=Hospital&location=${pos.lat}%2C${pos.lng}&radius=1500&type=hospital&key=AlzaSyNCxpPtl_0T2x4jQ1cqxaJpbLPj-Ljse9N`
           )
           .then((response) => {
             if (response.data?.results) {
@@ -96,7 +96,7 @@ const HospitalLocator = () => {
 
     if (!window.google) {
       const script = document.createElement("script");
-      script.src = `https://maps.gomaps.pro/maps/api/js?key=AlzaSy2-nu3N5iP5toXTRKlpED2F0_hza6eFKHb`;
+      script.src = `https://maps.gomaps.pro/maps/api/js?key=AlzaSyNCxpPtl_0T2x4jQ1cqxaJpbLPj-Ljse9N`;
       script.async = true;
       script.defer = true;
       window.initMap = initMap;
