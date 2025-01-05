@@ -9,6 +9,7 @@ import Documents from "./Documents.js"
 import Notification from "./Notifications.js"
 import Ambulance from "./Ambulance.js"
 import HospitalLocator from "./HospitalLocator.js";
+import DiseasePredictor from "./DiseasePrediction.js";
 
 
 const Dashboard = () => {
@@ -30,7 +31,8 @@ const Dashboard = () => {
         Documents: <Documents email = {email}/>,
         Notification: <Notification />,
         Ambulance: <Ambulance />,
-        HospitalLocator: <HospitalLocator />
+        HospitalLocator: <HospitalLocator />,
+        DiseasePredictor: <DiseasePredictor />
     };
 
 
@@ -49,6 +51,7 @@ const Dashboard = () => {
                 <button className="naviBtn" onClick={() => btnAction("Notification")}>Notification</button>
                 <button className="naviBtn" onClick={() => btnAction("Ambulance")}>Ambulance Service</button>
                 <button className="naviBtn" onClick={() => btnAction("HospitalLocator")}>Nearby Hospitals</button>
+                <button className="naviBtn" onClick={() => btnAction("DiseasePredictor")}>Disease Analyzier</button>
                 <Link to="/"><button className="naviBtn" >Logout</button></Link>
 
 
