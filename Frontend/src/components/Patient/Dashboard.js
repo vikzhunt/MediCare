@@ -49,7 +49,7 @@ const Dashboard = () => {
                 <button className="naviBtn" onClick={() => btnAction("Notification")}><FontAwesomeIcon className="pr-2" icon={faBell} />Notification</button>
                 <button className="naviBtn" onClick={() => btnAction("Ambulance")}><FontAwesomeIcon className="pr-2" icon={faAmbulance} />Ambulance Service</button>
                 <button className="naviBtn" onClick={() => btnAction("HospitalLocator")}><FontAwesomeIcon className="pr-2" icon={faHospital} />Nearby Hospitals</button>
-                <button className="naviBtn" onClick={() => btnAction("DiseasePredictor")}><FontAwesomeIcon className="pr-2" icon={faDiagnoses} />Disease Analyzier</button>
+                <button className="naviBtn" onClick={() => btnAction("DiseasePredictor")}><FontAwesomeIcon className="pr-2" icon={faDiagnoses} />Disease Analyzer</button>
                 <Link to="/"><button className="naviBtn logout" ><FontAwesomeIcon className="pr-2" icon={faSignOutAlt} />Logout</button></Link>
             </div>
             <div className="RHS">

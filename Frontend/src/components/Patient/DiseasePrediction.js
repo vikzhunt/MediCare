@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { IoIosSend } from "react-icons/io";
 import axios from 'axios';
 
 const DiseasePredictor = () => {
+    const messageEndRef = useRef(null);
     const [messages, setMessages] = useState([]);
     const [userInput, setUserInput] = useState('');
     const [inputs, setInputs] = useState([]);
@@ -12,6 +13,14 @@ const DiseasePredictor = () => {
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [name, setName] = useState('');
     const [prediction, setPrediction] = useState(null); // Define the prediction state
+
+    const scrollToBottom = () => {
+        messageEndRef.current?.scrollIntoView({ behaviour: "smooth" });
+    };
+
+    useEffect(()=>{
+        scrollToBottom();
+    },[messages]);
 
     useEffect(() => {
         setMessages([{ sender: 'bot', text: 'Hello! What is your name?' }]);
@@ -87,7 +96,7 @@ const DiseasePredictor = () => {
     return (
         <div className="flex flex-col"> 
             <h1 className="block text-center text-4xl text-slate-700 font-semibold pb-2 mb-2">Disease Analyzer</h1>
-            <div className="flex flex-col items-center justify-center min-h-fit bg-indigo-50/25 border rounded border-slate-400/75 p-4 pt-3 pb-4">
+            <div className="flex flex-col items-center justify-center min-h-fit bg-indigo-50/25 border rounded border-slate-400/75 p-4 pt-2 pb-4">
                 <div className="flex w-full h-40 item-center">
                     <div className="flex flex-col max-w-3xl w-full h-40 mt-4 scale-75"> 
                         <div className="flex max-w-3xl w-full pl-6">
@@ -124,17 +133,26 @@ const DiseasePredictor = () => {
                     </div>
                 </div>
                 <div className="w-full max-w-4xl bg-white border border-slate-400/75 rounded-lg shadow-md p-4 pb-2">
-                    <div className="h-60 overflow-y-auto p-2 border-b">
+                    <div className="h-60 overflow-auto md:overflow-y-scroll p-2 border-b">
                     {messages.map((msg, index) => (
                         <div
                         key={index}
-                        className={`my-2 p-2 rounded-md ${
-                            msg.sender === 'bot' ? 'bg-blue-100/50 text-blue-900' : 'bg-green-100/50 text-green-900'
+                        className={`my-2 p-2 rounded-md flex ${
+                            msg.sender === 'bot' ? 'justify-start' : 'justify-end'
                         }`}
                         >
-                        <strong>{msg.sender === 'bot' ? 'Bot:' : 'You:'}</strong> {msg.text}
+                            <div
+                                className={`p-2 rounded-md max-w-[70%] ${
+                                msg.sender === 'bot'
+                                    ? 'bg-blue-100/50 text-blue-800'
+                                    : 'bg-green-100/50 text-green-800'
+                                }`}
+                            >
+                            <strong>{msg.sender === 'bot' ? 'Bot:' : 'You:'}</strong> {msg.text}
+                            </div>
                         </div>
                     ))}
+                    <div ref={messageEndRef}></div>
                     </div>
                     <div className="mt-2 flex items-center">
                     <input
