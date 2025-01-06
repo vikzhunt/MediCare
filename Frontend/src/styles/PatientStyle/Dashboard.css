@@ -14,8 +14,8 @@
 }
 
 .naviBtn {
-    background-color: #cacfd4; 
-    color: #333335; 
+    background-color: #616576; 
+    color: #e8e8e8; 
     border: none; 
     padding: 15px;
     margin: 10px 0; 
@@ -26,10 +26,16 @@
 }
 
 .naviBtn:hover {
-    background-color: #cc9090bb; 
+    background-color: #525b7a; 
     border: 2px solid #c6c6cf ;
     color: white;
     scale: 1.05;
+}
+
+.naviBtn.selected {
+    background-color: #525b7a; 
+    border: 2px solid #c6c6cf ;
+    color: white;
 }
 
 .logout{

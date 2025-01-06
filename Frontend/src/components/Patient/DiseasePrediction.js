@@ -100,28 +100,28 @@ const DiseasePredictor = () => {
                 <div className="flex w-full h-40 item-center">
                     <div className="flex flex-col max-w-3xl w-full h-40 mt-4 scale-75"> 
                         <div className="flex max-w-3xl w-full pl-6">
-                            <h1 className="text-gray-600 border-2 rounded-full border-indigo-300/75 py-2 px-4 mb-2 mr-2" >anxiety</h1>
-                            <h1 className="text-gray-600 border-2 rounded-full border-green-300/75 py-2 px-4 mb-2 mr-2" >back pain</h1>
-                            <h1 className="text-gray-600 border-2 rounded-full border-red-300/75 py-2 px-4 mb-2 mr-2" >cough</h1>
-                            <h1 className="text-gray-600 border-2 rounded-full border-yellow-300/75 py-2 px-4 mb-2 mr-2" >shivering</h1>
-                            <h1 className="text-gray-600 border-2 rounded-full border-purple-300/75 py-2 px-4 mb-2 mr-2" >stomach pain</h1>
-                            <h1 className="text-gray-600 border-2 rounded-full border-pink-300/75 py-2 px-4 mb-2 mr-2" >fever</h1>
-                            <h1 className="text-gray-600 border-2 rounded-full border-blue-300/75 py-2 px-4 mb-2 mr-2" >itching</h1>
+                            <h1 className="text-gray-600 border-2 rounded-full border-indigo-300/75 py-2 px-4 mb-2 mr-2 hover:bg-indigo-200/50" >anxiety</h1>
+                            <h1 className="text-gray-600 border-2 rounded-full border-green-300/75 py-2 px-4 mb-2 mr-2 hover:bg-green-200/50" >back pain</h1>
+                            <h1 className="text-gray-600 border-2 rounded-full border-red-300/75 py-2 px-4 mb-2 mr-2 hover:bg-red-200/50" >cough</h1>
+                            <h1 className="text-gray-600 border-2 rounded-full border-yellow-300/75 py-2 px-4 mb-2 mr-2 hover:bg-yellow-200/50" >shivering</h1>
+                            <h1 className="text-gray-600 border-2 rounded-full border-purple-300/75 py-2 px-4 mb-2 mr-2 hover:bg-purple-200/50" >stomach pain</h1>
+                            <h1 className="text-gray-600 border-2 rounded-full border-pink-300/75 py-2 px-4 mb-2 mr-2 hover:bg-pink-200/50" >fever</h1>
+                            <h1 className="text-gray-600 border-2 rounded-full border-blue-300/75 py-2 px-4 mb-2 mr-2 hover:bg-blue-200/50" >itching</h1>
                         </div>
                         <div className="flex max-w-3xl w-full">
-                            <h1 className="text-gray-600 border-2 rounded-full border-red-300/75 py-2 px-4 mb-2 mr-2" >headache</h1>
-                            <h1 className="text-gray-600 border-2 rounded-full border-pink-300/75 py-2 px-4 mb-2 mr-2" >chest pain</h1>
-                            <h1 className="text-gray-600 border-2 rounded-full border-purple-300/75 py-2 px-4 mb-2 mr-2" >congestion</h1>
-                            <h1 className="text-gray-600 border-2 rounded-full border-orange-300/75 py-2 px-4 mb-2 mr-2" >loss of balance</h1>
-                            <h1 className="text-gray-600 border-2 rounded-full border-green-300/75 py-2 px-4 mb-2 mr-2" >vomitting</h1>
-                            <h1 className="text-gray-600 border-2 rounded-full border-yellow-300/75 py-2 px-4 mb-2 mr-2" >swelling joints</h1>
+                            <h1 className="text-gray-600 border-2 rounded-full border-pink-300/75 py-2 px-4 mb-2 mr-2 hover:bg-pink-200/50" >chest pain</h1>
+                            <h1 className="text-gray-600 border-2 rounded-full border-purple-300/75 py-2 px-4 mb-2 mr-2 hover:bg-purple-200/50" >congestion</h1>
+                            <h1 className="text-gray-600 border-2 rounded-full border-orange-300/75 py-2 px-4 mb-2 mr-2 hover:bg-orange-200/50" >loss of balance</h1>
+                            <h1 className="text-gray-600 border-2 rounded-full border-green-300/75 py-2 px-4 mb-2 mr-2 hover:bg-green-200/50" >vomitting</h1>
+                            <h1 className="text-gray-600 border-2 rounded-full border-red-300/75 py-2 px-4 mb-2 mr-2 hover:bg-red-200/50" >headache</h1>
+                            <h1 className="text-gray-600 border-2 rounded-full border-yellow-300/75 py-2 px-4 mb-2 mr-2 hover:bg-yellow-200/50" >swelling joints</h1>
                         </div>
                         <div className="flex max-w-3xl w-full pl-8">
-                            <h1 className="text-gray-600 border-2 rounded-full border-green-300/75 py-2 px-4 mb-2 mr-2" >depression</h1>
-                            <h1 className="text-gray-600 border-2 rounded-full border-yellow-300/75 py-2 px-4 mb-2 mr-2" >lack of concentration</h1>
-                            <h1 className="text-gray-600 border-2 rounded-full border-green-300/75 py-2 px-4 mb-2 mr-2" >dizziness</h1>
-                            <h1 className="text-gray-600 border-2 rounded-full border-red-300/75 py-2 px-4 mb-2 mr-2" >blackheads</h1>
-                            <h1 className="text-gray-600 border-2 rounded-full border-purple-300/75 py-2 px-4 mb-2 mr-2" >fast heart rate</h1>
+                            <h1 className="text-gray-600 border-2 rounded-full border-green-300/75 py-2 px-4 mb-2 mr-2 hover:bg-green-200/50" >depression</h1>
+                            <h1 className="text-gray-600 border-2 rounded-full border-yellow-300/75 py-2 px-4 mb-2 mr-2 hover:bg-yellow-200/50" >lack of concentration</h1>
+                            <h1 className="text-gray-600 border-2 rounded-full border-green-300/75 py-2 px-4 mb-2 mr-2 hover:bg-green-200/50" >dizziness</h1>
+                            <h1 className="text-gray-600 border-2 rounded-full border-red-300/75 py-2 px-4 mb-2 mr-2 hover:bg-red-200/50" >blackheads</h1>
+                            <h1 className="text-gray-600 border-2 rounded-full border-purple-300/75 py-2 px-4 mb-2 mr-2 hover:bg-purple-200/50" >fast heart rate</h1>
                         </div> 
                     </div>
                     <div className="max-w-40 pt-4 overflow-hidden max-h-40 pl-0 relative">

@@ -52,114 +52,116 @@ const Profile = (props) => {
   }
 
   return (
-    <div className="patProfileContainer">
-      <div className="patProfielTab">
-        <div className="patcontent">
-          <h2>{user.username}</h2>
-          <h5>Age: {user.age}</h5>
-          <h5>Gender: {user.gender}</h5>
-          <h5>Blood Group: {user.bloodGroup}</h5>
-        </div>
+    <div className="bg-slate-400/50 flex justify-center max-h-xl h-full m-0 p-10">
+      <div className="patProfileContainer">
+        <div className="patProfielTab">
+          <div className="patcontent">
+            <h2>{user.username}</h2>
+            <h5>Age: {user.age}</h5>
+            <h5>Gender: {user.gender}</h5>
+            <h5>Blood Group: {user.bloodGroup}</h5>
+          </div>
 
-        <div>
-          <img className="patProfilePic" src={profilePic} alt="Profile" />
-        </div>
-      </div>
-      <button className="patEditBtn" onClick={handleEditClick}>Edit </button>
-
-      {isModalOpen && (
-        <div className="modal">
-          <div className="modalContent">
-            <h3>Edit Profile</h3>
-            <form onSubmit={handleFormSubmit}>
-              <input
-                type="text"
-                name="username"
-                value={formData.username || ""}
-                onChange={handleFormChange}
-                placeholder="Username"
-                required
-              />
-              <input
-                type="text"
-                name="contactNo"
-                value={formData.contactNo || ""}
-                onChange={handleFormChange}
-                placeholder="Contact No"
-                required
-              />
-              <input
-                type="number"
-                name="age"
-                value={formData.age || ""}
-                onChange={handleFormChange}
-                placeholder="Age"
-                required
-              />
-              <select
-                name="gender"
-                value={formData.gender || ""}
-                onChange={handleFormChange}
-                required
-              >
-                <option value="">Select Gender</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="Other">Other</option>
-              </select>
-              <input
-                type="text"
-                name="bloodGroup"
-                value={formData.bloodGroup || ""}
-                onChange={handleFormChange}
-                placeholder="Blood Group"
-                required
-              />
-              {user.role === "doctor" && (
-                <>
-                  <input
-                    type="text"
-                    name="specialization"
-                    value={formData.specialization || ""}
-                    onChange={handleFormChange}
-                    placeholder="Specialization"
-                  />
-                  <input
-                    type="number"
-                    name="consultationFee"
-                    value={formData.consultationFee || ""}
-                    onChange={handleFormChange}
-                    placeholder="Consultation Fee"
-                  />
-                  <input
-                    type="text"
-                    name="address"
-                    value={formData.address || ""}
-                    onChange={handleFormChange}
-                    placeholder="Address"
-                  />
-                  <input
-                    type="text"
-                    name="availability"
-                    value={formData.availability || ""}
-                    onChange={handleFormChange}
-                    placeholder="Availability"
-                  />
-                  <input
-                    type="number"
-                    name="experience"
-                    value={formData.experience || ""}
-                    onChange={handleFormChange}
-                    placeholder="Experience"
-                  />
-                </>
-              )}
-              <button type="submit" className="saveBtn">Save</button>
-              <button type="button" className="cancelBtn" onClick={() => setIsModalOpen(false)}>Cancel</button>
-            </form>
+          <div>
+            <img className="patProfilePic" src={profilePic} alt="Profile" />
           </div>
         </div>
-      )}
+        <button className="patEditBtn" onClick={handleEditClick}>Edit </button>
+
+        {isModalOpen && (
+          <div className="modal">
+            <div className="modalContent">
+              <h3 className="text-2xl text-gray-700 font-bold" >Edit Profile</h3>
+              <form onSubmit={handleFormSubmit}>
+                <input
+                  type="text"
+                  name="username"
+                  value={formData.username || ""}
+                  onChange={handleFormChange}
+                  placeholder="Username"
+                  required
+                />
+                <input
+                  type="text"
+                  name="contactNo"
+                  value={formData.contactNo || ""}
+                  onChange={handleFormChange}
+                  placeholder="Contact No"
+                  required
+                />
+                <input
+                  type="number"
+                  name="age"
+                  value={formData.age || ""}
+                  onChange={handleFormChange}
+                  placeholder="Age"
+                  required
+                />
+                <select
+                  name="gender"
+                  value={formData.gender || ""}
+                  onChange={handleFormChange}
+                  required
+                >
+                  <option value="">Select Gender</option>
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                  <option value="Other">Other</option>
+                </select>
+                <input
+                  type="text"
+                  name="bloodGroup"
+                  value={formData.bloodGroup || ""}
+                  onChange={handleFormChange}
+                  placeholder="Blood Group"
+                  required
+                />
+                {user.role === "doctor" && (
+                  <>
+                    <input
+                      type="text"
+                      name="specialization"
+                      value={formData.specialization || ""}
+                      onChange={handleFormChange}
+                      placeholder="Specialization"
+                    />
+                    <input
+                      type="number"
+                      name="consultationFee"
+                      value={formData.consultationFee || ""}
+                      onChange={handleFormChange}
+                      placeholder="Consultation Fee"
+                    />
+                    <input
+                      type="text"
+                      name="address"
+                      value={formData.address || ""}
+                      onChange={handleFormChange}
+                      placeholder="Address"
+                    />
+                    <input
+                      type="text"
+                      name="availability"
+                      value={formData.availability || ""}
+                      onChange={handleFormChange}
+                      placeholder="Availability"
+                    />
+                    <input
+                      type="number"
+                      name="experience"
+                      value={formData.experience || ""}
+                      onChange={handleFormChange}
+                      placeholder="Experience"
+                    />
+                  </>
+                )}
+                <button type="submit" className="saveBtn">Save</button>
+                <button type="button" className="cancelBtn" onClick={() => setIsModalOpen(false)}>Cancel</button>
+              </form>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
