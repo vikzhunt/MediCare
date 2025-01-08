@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 1rem 2rem;
-    background-color: rgb(228, 234, 247);
+    background-color: rgb(142, 158, 194);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-family: Arial, sans-serif;
     border-bottom: 4px solid #ddd;
@@ -13,7 +13,7 @@
 .Navi > div:first-child {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #007bff;
+    color: #18334f;
 }
 
 .gen {
@@ -31,9 +31,9 @@
 }
 
 .genBtn:hover {
-    color: #007bff;
+    color: #715534;
     transform: translateY(-2px);
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
 
 .loginSign {
@@ -43,8 +43,8 @@
 
 .loginSign button {
     background-color: transparent;
-    border: 2px solid #007bff;
-    color: #007bff;
+    border: 2px solid #18334f;
+    color: #18334f;
     padding: 0.5rem 1rem;
     font-size: 1rem;
     font-weight: 500;
@@ -59,9 +59,9 @@
 }
 
 .loginSign button:hover {
-    background-color: rgb(67, 159, 144);
+    background-color: rgb(62, 97, 131);
     color: #ffffff;
-    border-color: rgb(67, 159, 144);
+    border-color: rgb(255, 255, 255);
 }
 
 .signUp {

@@ -16,7 +16,7 @@
 .login-container {
     position: relative;
     width: 100%;
-    background-color: #fff;
+    background-color: #aac0d4;
     min-height: 100vh;
     overflow: hidden;
 }
@@ -64,7 +64,7 @@
 
 .Login-Section .title {
     font-size: 2.2rem;
-    color: #444;
+    color: #3b3939;
     margin-bottom: 10px;
 }
 
@@ -96,7 +96,7 @@
     line-height: 1;
     font-weight: 600;
     font-size: 1.1rem;
-    color: #333;
+    color: #3b3939;
 }
 
 .Login-Section .input-field input::placeholder {
@@ -170,7 +170,7 @@
     top: -10%;
     right: 48%;
     transform: translateY(-50%);
-    background-image: linear-gradient(12deg, #9f5522 0%, #0043ff 100%);
+    background-image: linear-gradient(12deg, #a84a4a 0%, #0051ff 100%);
     transition: 1.8s ease-in-out;
     border-radius: 50%;
     z-index: 6;

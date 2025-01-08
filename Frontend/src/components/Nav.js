@@ -18,7 +18,7 @@ const Nav = (props) => {
     }
     return (
         <div className="Navi">  
-            <div>Symbol</div>
+            <div>MediCare</div>
             <div className='gen'>
                 <button className='genBtn'>Home</button>
                 <button className='genBtn'>Services</button>

@@ -7,7 +7,7 @@ const Footer = () => {
         <footer className="footer">
             <div className="footer-container">
                 <div className="footer-section">
-                    <h2 className="footer-logo">Symbol</h2>
+                    <h2 className="footer-logo">MediCare</h2>
                     <p>Subscribe</p>
                     <div className="subscribe">
                         <input type="email" placeholder="Your Email" />

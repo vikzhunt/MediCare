@@ -1,7 +1,7 @@
 .footer {
-  background-color: #f8f9fa;
+  background-color: #1a2735;
   padding: 2rem;
-  color: #333;
+  color: #e5e0e0;
   font-family: Arial, sans-serif;
 }
 
@@ -21,7 +21,7 @@
 .footer-logo {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #007bff;
+  color: #7d9bbb;
 }
 
 .footer-section h3 {
@@ -41,13 +41,13 @@
 }
 
 .footer-section a {
-  color: #333;
+  color: #e5e0e0;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .footer-section a:hover {
-  color: #007bff;
+  color: #ae7c7c;
 }
 
 .subscribe {
@@ -58,32 +58,36 @@
 
 .subscribe input[type="email"] {
   padding: 0.5rem;
-  border: 1px solid #ddd;
+  padding-left: 15px;
+  margin-left: 60px;
+  border: 1px solid #bfbbbb;
   border-radius: 5px 0 0 5px;
   outline: none;
-  width: 150px;
+  height: 40px;
+  width: 200px;
 }
 
 .subscribe-btn {
   padding: 0.5rem 1rem;
-  background-color: #007bff;
+  background-color: #4b7098;
   border: none;
-  color: #fff;
+  color: #e5e0e0;
   cursor: pointer;
   border-radius: 0 5px 5px 0;
   transition: background-color 0.3s ease;
 }
 
 .subscribe-btn:hover {
-  background-color: #0056b3;
+  background-color: #375d85;
 }
 
 .footer-bottom {
   text-align: center;
   padding-top: 1rem;
-  border-top: 4px solid #ddd;
+  border-top: 1px solid #dddddd;
   font-size: 0.9rem;
-  color: #666;
+  width: 100%;
+  color: #e5e0e0;
 }
 
 .footer-bottom p {
